@@ -66,6 +66,9 @@ export default function Revision() {
                       <li key={i}>{m}</li>
                     ))}
                   </ul>
+                  <div style={{ padding: '10px 12px', background: 'var(--amber-soft)', borderRadius: 8, marginBottom: 12 }}>
+                    <p style={{ margin: 0, fontSize: 12.5, fontWeight: 650 }}>💡 {topic.hinglishTip}</p>
+                  </div>
                   <Link to={`/topics/${topic.id}`} className="btn btn-sm">
                     Full topic page →
                   </Link>

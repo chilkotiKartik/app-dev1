@@ -28,6 +28,13 @@ export default function TopicDetail() {
       <h1 className="page-title">{topic.name}</h1>
       <p className="page-lede">{topic.blurb}</p>
 
+      <div className="card card-pad" style={{ marginTop: 18, background: 'var(--amber-soft)', borderColor: 'transparent', maxWidth: 640 }}>
+        <p className="eyebrow" style={{ marginBottom: 6 }}>
+          💡 Trick (Hinglish)
+        </p>
+        <p style={{ margin: 0, fontSize: 14 }}>{topic.hinglishTip}</p>
+      </div>
+
       <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) 300px', gap: 40, marginTop: 32 }} className="topic-grid">
         <div style={{ minWidth: 0 }}>
           <section aria-labelledby="learn-heading">

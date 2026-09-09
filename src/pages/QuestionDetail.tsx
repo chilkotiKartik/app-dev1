@@ -110,7 +110,7 @@ export default function QuestionDetail() {
         {question.solution.approach ? (
           <div style={{ marginTop: 16 }}>
             <p className="eyebrow" style={{ marginBottom: 6 }}>
-              Exam approach
+              💡 Trick / Exam approach
             </p>
             <p style={{ margin: 0 }}>{question.solution.approach}</p>
           </div>

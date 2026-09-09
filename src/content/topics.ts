@@ -56,6 +56,7 @@ export const topics: Topic[] = [
       'For "which URL returns 200 / throws 404", check the converter first, then the number of segments.',
       'For status-code sequence questions, walk the URLs in order and carry the session state forward between them.',
     ],
+    hinglishTip: 'Trick: pehle route ka converter aur methods check karo, phir hi body padho — 90% galat jawaab isi se aate hain ki galat route ke body ko sahi maan liya.',
   },
   {
     id: 'jinja-templates',
@@ -98,6 +99,7 @@ export const topics: Topic[] = [
       'For `$`/`{{ }}` mixing questions, mark each placeholder with which engine owns it before choosing.',
       'For a `{% if %}` inside a `{% for %}`, evaluate the condition against every item — the answer is usually the filtered subset.',
     ],
+    hinglishTip: 'Trick: {{ }} = Jinja2, $var = string.Template — dono alag bande hain. Aur child template ka content sirf {% block %} ke andar hi dikhta hai, bahar likha sab gayab ho jata hai.',
   },
   {
     id: 'html-css',
@@ -147,6 +149,7 @@ export const topics: Topic[] = [
       'List the selectors targeting each element and rank them before looking at the pictures.',
       'For form questions, check for a `method` attribute. Absent means GET.',
     ],
+    hinglishTip: 'Trick: !important sabse pehle jeetega, uske baad specificity (inline > id > class > tag), tabhi jaake order (last-wins) ka number aata hai.',
   },
   {
     id: 'javascript-web',
@@ -181,6 +184,7 @@ export const topics: Topic[] = [
       'For DOM options, eliminate on syntax first: any option assigning to `.style` as a whole, or using a hyphen, is out.',
       'For "browser or server?" questions, ask whether the work needs the page — if it does, it is the browser.',
     ],
+    hinglishTip: 'Trick: .style ek object hai, string nahi — hamesha .style.fontWeight jaisi property par assign karo, .style = \'bold\' kaam nahi karega.',
   },
   {
     id: 'databases',
@@ -227,6 +231,7 @@ export const topics: Topic[] = [
       'For session questions, mark the position of every `commit()` and split the operations around it.',
       'For ER diagrams, read the symbol at each end separately and translate it into a sentence before looking at the options.',
     ],
+    hinglishTip: 'Trick: ForeignKey jis table ko point kare wahi \'many\' side hota hai; agar us column pe unique=True hai to relationship one-to-one ban jaata hai.',
   },
   {
     id: 'rest-apis',
@@ -272,6 +277,7 @@ export const topics: Topic[] = [
       'For output-value questions, track each of the three input channels separately before reading the options.',
       'For status-code lists, answer each request independently — they rarely follow a pattern.',
     ],
+    hinglishTip: 'Trick: URL jis rule se match kare, method ke params usi rule ke variables se milne chahiye — nahi to signature mismatch ka error aayega.',
   },
   {
     id: 'testing',
@@ -323,6 +329,7 @@ export const topics: Topic[] = [
       'Read the summary line for the words "deselected" and "warnings" — they tell you whether -k or -m was used.',
       'For coverage matching, work out the minimum input set for each criterion rather than reasoning about the options.',
     ],
+    hinglishTip: 'Trick: pytest sirf test_ prefix wale hi uthata hai — naam ulta (case_test) ho to woh silently skip ho jaata hai, collect hi nahi hota.',
   },
   {
     id: 'python-cli',
@@ -365,6 +372,7 @@ export const topics: Topic[] = [
       'For decorator questions, rewrite the call as `wrapper(args)` and trace from there.',
       'For logging output questions, check the configured level before reading any log call.',
     ],
+    hinglishTip: 'Trick: sys.argv[0] hamesha script ka naam hota hai, user ka pehla argument sys.argv[1] se shuru hota hai — yeh bhoolna sabse common mistake hai.',
   },
   {
     id: 'web-fundamentals',
@@ -416,6 +424,7 @@ export const topics: Topic[] = [
       'For graph questions, tabulate interval, rate and duration before multiplying.',
       'For "which option is the sub-domain", split the hostname left to right.',
     ],
+    hinglishTip: 'Trick: rate hamesha bits mein, file size bytes mein — answer nikalne se pehle dono ko same unit mein le aao (÷8 karke), warna 8x galat jawaab milega.',
   },
   {
     id: 'tooling-git',
@@ -450,6 +459,7 @@ export const topics: Topic[] = [
       'For a command sequence, track which branch is checked out after every line.',
       'For staging questions, decide separately what happens to the index and to the working tree.',
     ],
+    hinglishTip: 'Trick: git merge X hamesha current branch mein hota hai — merge se pehle sahi branch checkout karna mat bhoolo.',
   },
   {
     id: 'app-design',
@@ -485,6 +495,7 @@ export const topics: Topic[] = [
       'Ask what the user perceives; that is the view.',
       'For heuristic questions, name what the system failed to do — that phrasing usually maps straight onto one heuristic.',
     ],
+    hinglishTip: 'Trick: kuch nahi dikha (silence) matlab \'visibility of system status\' ka violation; galti hone hi na dena \'error prevention\' hai — dono alag heuristics hain.',
   },
 ];
 

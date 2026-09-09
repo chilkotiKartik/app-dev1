@@ -121,6 +121,8 @@ export interface Topic {
   keyTerms: { term: string; meaning: string }[];
   commonMistakes: string[];
   examFocus: string[];
+  /** A short, punchy Hinglish trick for this topic — authored, not translated question content. */
+  hinglishTip: string;
 }
 
 /** A set of questions across papers that ask substantially the same thing. */

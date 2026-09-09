@@ -1,30 +1,28 @@
 import { Link } from 'react-router-dom';
 import { papers, topics, questions, repeatGroups, computeTopicStats } from '../content';
 import { formatMarks, pluralize } from '../lib/format';
+import { useLang } from '../lib/i18n';
 
 export default function Home() {
   const topicStats = computeTopicStats().slice(0, 6);
   const totalMarks = questions.reduce((s, q) => s + q.marks, 0);
+  const { t } = useLang();
 
   return (
     <div className="container" style={{ paddingTop: 40, paddingBottom: 40 }}>
       <section style={{ maxWidth: 760 }}>
         <span className="eyebrow">Modern Application Development I</span>
-        <h1 className="page-title">Study from the actual exam, not a guess at it.</h1>
-        <p className="page-lede">
-          Every question here is transcribed from {pluralize(papers.length, 'real source paper')} — four official
-          IITM BS Diploma end-term papers and one practice paper — with a verified solution, an explanation grounded
-          in the code, and the topic it belongs to. Nothing is invented.
-        </p>
+        <h1 className="page-title">{t('heroTitle')}</h1>
+        <p className="page-lede">{t('heroLede')}</p>
         <div className="row wrap" style={{ gap: 10, marginTop: 22 }}>
           <Link to="/topics" className="btn btn-primary">
-            Start with the topics
+            {t('ctaTopics')}
           </Link>
           <Link to="/questions" className="btn">
-            Browse the question bank
+            {t('ctaBank')}
           </Link>
           <Link to="/revision" className="btn">
-            Quick revision
+            {t('ctaRevision')}
           </Link>
         </div>
       </section>

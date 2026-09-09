@@ -1,16 +1,20 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useTheme } from '../lib/theme';
+import { useLang } from '../lib/i18n';
 
-const NAV = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/topics', label: 'Topics' },
-  { to: '/questions', label: 'Question Bank' },
-  { to: '/papers', label: 'Papers' },
-  { to: '/repeated', label: 'Repeated' },
-  { to: '/important', label: 'Important Topics' },
-  { to: '/revision', label: 'Revision' },
-];
+function useNav() {
+  const { t } = useLang();
+  return [
+    { to: '/', label: t('home'), end: true },
+    { to: '/topics', label: t('topics') },
+    { to: '/questions', label: t('bank') },
+    { to: '/papers', label: t('papers') },
+    { to: '/repeated', label: t('repeated') },
+    { to: '/important', label: t('important') },
+    { to: '/revision', label: t('revision') },
+  ];
+}
 
 function SunIcon() {
   return (
@@ -48,6 +52,8 @@ export default function Layout() {
   const [q, setQ] = useState('');
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
+  const { lang, setLang } = useLang();
+  const NAV = useNav();
 
   useEffect(() => setMobileOpen(false), []);
 
@@ -95,6 +101,16 @@ export default function Layout() {
                 style={{ height: 34, fontSize: 13 }}
               />
             </form>
+            <button
+              type="button"
+              className="icon-btn"
+              aria-label={lang === 'en' ? 'Switch to Hinglish' : 'Switch to English'}
+              title={lang === 'en' ? 'EN → Hinglish' : 'Hinglish → EN'}
+              onClick={() => setLang(lang === 'en' ? 'hi' : 'en')}
+              style={{ width: 'auto', padding: '0 10px', fontSize: 12, fontWeight: 700 }}
+            >
+              {lang === 'en' ? 'EN' : 'हिं'}
+            </button>
             <button
               type="button"
               className="icon-btn"
