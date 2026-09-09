@@ -86,7 +86,7 @@ export default function Layout() {
           </nav>
 
           <div className="header-actions">
-            <form onSubmit={submitSearch} role="search" className="search-box" style={{ width: 200 }}>
+            <form onSubmit={submitSearch} role="search" className="search-box header-search">
               <label htmlFor="global-search" className="sr-only">
                 Search questions
               </label>
@@ -133,6 +133,21 @@ export default function Layout() {
         </div>
         {mobileOpen ? (
           <nav className="container" aria-label="Primary mobile" style={{ paddingBottom: 12, display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <form onSubmit={submitSearch} role="search" className="search-box mobile-search">
+              <label htmlFor="global-search-mobile" className="sr-only">
+                Search questions
+              </label>
+              <SearchIcon />
+              <input
+                id="global-search-mobile"
+                className="input"
+                type="search"
+                placeholder="Search questions…"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                style={{ height: 40, fontSize: 15, width: '100%' }}
+              />
+            </form>
             {NAV.map((item) => (
               <NavLink
                 key={item.to}
